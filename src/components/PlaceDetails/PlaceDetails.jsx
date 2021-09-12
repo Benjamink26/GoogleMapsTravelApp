@@ -33,7 +33,7 @@ const PlaceDetails = ({place, selected, refProp}) => {
                 </Box>
                 {place?.awards?.map((award) => (
                     <Box my={1} display='flex' justifyContent='space-between' alignItems='center'>
-                        <img src={award.images.small} alt={award.display.name}/>
+                        <img src={award.images.small}/>
                         <Typography variant='subtitle2' color='textSecondary'>{award.display_name}</Typography>                    
                     </Box>
                 ))}

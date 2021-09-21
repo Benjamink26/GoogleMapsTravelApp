@@ -1,4 +1,4 @@
-import react from 'react';
+import react, {useState} from 'react';
 import { Autocomplete} from '@react-google-maps/api';
 import { AppBar, Toolbar, Typography, InputBase, Box } from '@material-ui/core';
 import { classExpression } from '@babel/types';
@@ -6,7 +6,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import useStyles from './styles';
 
-const Header = ({setCoordinates}) => {
+const Header = ({setCoord}) => {
     //useStyles is a hook and must be called
     const classes = useStyles();
     const [autocomplete, setAutocomplete] = useState(null);
@@ -16,7 +16,7 @@ const Header = ({setCoordinates}) => {
     const onPlaceChanged = () => {
         const lat = autocomplete.getPlace().geometry.location.lat();
         const lng = autocomplete.getPlace().geometry.location.lng();
-        setCoordinates({lat, lng});
+        setCoord({lat, lng});
     }
 
     return (
